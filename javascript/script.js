@@ -53,27 +53,33 @@ const app = new Vue({
             },
         ],
         newIngredient: '',
-        newQ: null,
-        newCheck: null,
-        newUm: null,
-        important: null
+        newQ: '',
+        newCheck: false,
+        newUm: '',
+        important: false,
+        warning: ''
     },
     methods: {
         add() {
-            const addIngredient = {
-                nome: this.newIngredient,
-                q: this.newQ,
-                um: this.newUm + '.',
-                check: this.newCheck ? false : true
+            if(this.newIngredient != '' && this.newQ != '' && this.newUm != '') {
+                const addIngredient = {
+                    nome: this.newIngredient,
+                    q: this.newQ,
+                    um: this.newUm + '.',
+                    check: this.newCheck ? false : true
+                }
+                this.important ? this.tiramisu.unshift(addIngredient) : this.tiramisu.push(addIngredient);
+                this.newIngredient = '';
+                this.newQ = '';
+                this.newUm = '';
+                this.warning = '';
+                this.$refs.input.focus();
+            } else {
+                this.warning = 'Non hai compilato tutti i campi';
             }
-            this.important ? this.tiramisu.unshift(addIngredient) : this.tiramisu.push(addIngredient);
-            this.newIngredient = '';
-            this.newQ = null;
-            this.newUm = '';
-            this.$refs.input.focus();
         },
         capitalize(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
-          }
+        }
     }
 })
