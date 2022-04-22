@@ -29,8 +29,10 @@
                             <span @click="ingrediente.check = !ingrediente.check">
                                 {{capitalize(ingrediente.nome) + ' ' + ingrediente.q + ingrediente.um}}
                             </span>
+                            <i class="fa-solid fa-xmark" @click="tiramisu.splice(i, 1)"></i>
                         </li>
                     </ul>
+                    <h3 v-if="tiramisu.length == 0">La lista della spesa &egrave; vuota</h3>
                 </section>
             </div>
         </div>
