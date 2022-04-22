@@ -37,7 +37,7 @@
                 <!-- Input -->
                 <div class="padd" id="inputform">
                     <h2 class="section_title">Aggiungi cose da acquistare</h2>
-                    <form>
+                    <form @keyup.enter="add">
                         <div class="mb-3">
                           <label for="newingredient" class="form-label">Ingrediente</label>
                           <input type="text" class="form-control" id="newingredient" aria-describedby="emailHelp" v-model="newIngredient" ref="input">
