@@ -1,0 +1,69 @@
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*Grafica intestazione*/
+#logo{
+    height: 70px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+#title{
+    font-size: 50px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*Colori*/
+.bg-lightgrey{
+    background-color: #F8F8F8;
+}
+.bg-white{
+    background-color: #FFFFFF;
+}
+
+/*Grafica corpo*/
+.container{
+    margin: 40px auto;
+    width: 70%;
+    border-radius: 5px;
+    padding-top: 15px;
+}
+.padd{
+    padding-left: 4%;
+    padding-bottom: 10px;
+}
+
+/*Grafica liste*/
+.section_title{
+    font-weight: 700;
+}
+.check{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid red;
+    vertical-align: middle;
+    margin-left: 10px;
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+}
+.green{
+    border-color: green;
+    color: green;
+}
+.dist{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.dist span, i{
+    cursor: pointer;
+}
