@@ -20,7 +20,7 @@
     <main>
         <div id="app">
             <div class="container bg-white">
-                <!-- Elenchi -->
+                <!-- Elenco -->
                 <section class="padd">
                     <h2 class="section_title">Lista della spesa</h2>
                     <ul v-for="(ingrediente, i) in tiramisu" :key="i">
@@ -34,6 +34,33 @@
                     </ul>
                     <h3 v-if="tiramisu.length == 0">La lista della spesa &egrave; vuota</h3>
                 </section>
+                <!-- Input -->
+                <div class="padd" id="inputform">
+                    <h2 class="section_title">Aggiungi cose da acquistare</h2>
+                    <form>
+                        <div class="mb-3">
+                          <label for="newingredient" class="form-label">Ingrediente</label>
+                          <input type="text" class="form-control" id="newingredient" aria-describedby="emailHelp" v-model="newIngredient" ref="input">
+                        </div>
+                        <div class="mb-3">
+                          <label for="quantity" class="form-label">Quantità</label>
+                          <input type="number" class="form-control" id="quantity" v-model="newQ">
+                        </div>
+                        <div class="mb-3">
+                            <label for="unit" class="form-label">Unit&agrave; di misura</label>
+                            <input type="text" class="form-control" id="unit" v-model="newUm">
+                          </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="buy" v-model="newCheck">
+                          <label class="form-check-label" for="buy">Da comprare</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="importantCheck" v-model="important">
+                            <label class="form-check-label" for="importantCheck">Importante</label>
+                          </div>
+                        <button type="button" class="btn btn-primary" @click="add">Aggiungi ingrediente</button>
+                      </form>
+                </div>
             </div>
         </div>
     </main>

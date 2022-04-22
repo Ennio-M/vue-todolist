@@ -51,9 +51,27 @@ const app = new Vue({
                 um: 'ml.',
                 check: false
             },
-        ]
+        ],
+        newIngredient: '',
+        newQ: null,
+        newCheck: null,
+        newUm: null,
+        important: null
     },
     methods: {
+        add() {
+            const addIngredient = {
+                nome: this.newIngredient,
+                q: this.newQ,
+                um: this.newUm + '.',
+                check: this.newCheck ? false : true
+            }
+            this.important ? this.tiramisu.unshift(addIngredient) : this.tiramisu.push(addIngredient);
+            this.newIngredient = '';
+            this.newQ = null;
+            this.newUm = '';
+            this.$refs.input.focus();
+        },
         capitalize(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
           }
